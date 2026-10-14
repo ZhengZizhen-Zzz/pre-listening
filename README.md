@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="docs/assets/cover.svg" alt="Pre聆听大师：让每一遍试讲，都有下一步" width="100%">
+<a href="https://zhengzizhen-zzz.github.io/pre-listening/video.html"><img src="docs/assets/video-poster.jpg" alt="播放 85 秒产品演示：从试讲超时到复盘、改稿、追问与 Agent 决策" width="100%"></a>
 
 **AI 汇报演练助手 · 把 PPT、真实发言和逐页用时，变成下一遍可用的讲稿与练习。**
 
-**[▶ 立即体验在线示例](https://zhengzizhen-zzz.github.io/pre-listening/)**
+**[▶ 85 秒看完整演示](https://zhengzizhen-zzz.github.io/pre-listening/video.html) · [立即体验在线示例 →](https://zhengzizhen-zzz.github.io/pre-listening/)**
 
 免注册 · 免配置 · 材料已备好，直接体验复盘、改稿采用与听众追问
 

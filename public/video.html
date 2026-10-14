@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>85 秒看懂 Pre聆听大师 · 产品演示</title>
+<meta name="description" content="从一次超时汇报出发，看 Pre 如何关联 PPT、实际发言与逐页用时，完成复盘、改稿、听众追问，并由目标 Agent 选择下一步。">
+<style>
+:root{color-scheme:light;font-family:system-ui,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:#23344d;background:#f3f6fc}*{box-sizing:border-box}body{margin:0}main{width:min(1100px,calc(100% - 40px));margin:32px auto 48px}nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;font-size:14px}a{color:#355dd1;text-decoration:none}a:hover{text-decoration:underline}.brand{font-weight:750;color:#1c3354;font-size:20px}h1{font-size:clamp(27px,4vw,40px);letter-spacing:-.04em;margin:18px 0 10px}.lead{color:#67778d;line-height:1.7;margin:0 0 24px}.player{position:relative;background:#182b45;border-radius:20px;overflow:hidden;box-shadow:0 18px 60px #172c4a18;aspect-ratio:16/9}video{display:block;width:100%;height:100%}.play-cover{position:absolute;inset:0;border:0;background:transparent;cursor:pointer}.play-cover span{position:absolute;left:4.9%;top:57%;width:33%;height:12%;display:flex;align-items:center;justify-content:center;border-radius:20px;background:#426be5;color:white;font-size:clamp(13px,2.4vw,25px);font-weight:600;box-shadow:0 2px 16px #0002}.play-cover:focus-visible{outline:4px solid #9bb7ff;outline-offset:-5px}[hidden]{display:none!important}.below{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:20px}.meta{color:#66788f;font-size:14px}.primary{padding:13px 20px;background:#355fd4;border-radius:12px;color:white;font-size:15px;font-weight:650;white-space:nowrap}.primary:hover{background:#234bba;text-decoration:none}.chapters{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 28px}.chapters button{border:1px solid #dbe3ee;background:white;border-radius:10px;padding:10px 14px;color:#405775;font:inherit;font-size:14px;cursor:pointer}.chapters button:hover{border-color:#779ae8;color:#355dd1}button:focus-visible,a:focus-visible{outline:3px solid #85a5ed;outline-offset:3px}.note{font-size:13px;line-height:1.8;color:#7b889a;border-top:1px solid #dfe6f0;padding-top:18px}.error{color:#aa4e34;font-size:15px;line-height:1.7}details{margin-top:20px;font-size:14px;color:#5b6e87}summary{cursor:pointer}ol{padding-left:22px;line-height:1.85}li{margin:12px 0}strong{color:#354f70}@media(max-width:600px){main{width:calc(100% - 24px);margin:18px auto}.player{border-radius:12px}.below{align-items:flex-start}.meta{font-size:12px;line-height:1.7;max-width:160px}.primary{padding:10px 13px}.chapters{gap:8px}.chapters button{font-size:12px;padding:9px 10px}nav{font-size:12px}.brand{font-size:17px}}
+</style>
+</head>
+<body><main>
+<nav><a class="brand" href="./">Pre聆听大师</a><a href="https://github.com/ZhengZizhen-Zzz/pre-listening">查看 GitHub 项目 ↗</a></nav>
+<h1>把修改，带进下一遍汇报。</h1>
+<p class="lead">85 秒，从一次超时汇报出发，看完整使用流程与目标 Agent。</p>
+<div class="player"><video id="demo" controls playsinline preload="metadata" poster="./assets/video-poster.jpg" aria-label="Pre聆听大师产品演示">
+<source src="./assets/product-demo.mp4" type="video/mp4"><track kind="captions" src="./assets/product-demo.zh.vtt" srclang="zh" label="中文完整旁白">
+你的浏览器无法播放视频，可以<a href="./assets/product-demo.mp4">下载 MP4</a>观看。</video>
+<button id="play" class="play-cover" aria-label="播放 85 秒产品演示"><span>▶ 播放 85 秒演示</span></button></div>
+<p id="error" class="error" role="status" hidden>暂时无法播放。请稍后重试，或<a href="./assets/product-demo.mp4">下载视频</a>。</p>
+<div class="below"><span class="meta">中文旁白 · 要点字幕 · 约 1.8 MB</span><a class="primary" href="./">立即体验在线示例 →</a></div>
+<div class="chapters" aria-label="视频章节">
+<button data-seek="0">00:00 解决什么问题</button><button data-seek="13.25">00:13 材料与演练</button><button data-seek="36.88">00:37 复盘与改稿</button><button data-seek="52.83">00:53 听众追问</button><button data-seek="61.08">01:01 Agent 与 Harness</button>
+</div>
+<p class="note">界面来自实际产品，以虚构案例演示操作流程；Agent 决策回放来自已保存的真实模型调用，使用合成测试输入。<a href="https://github.com/ZhengZizhen-Zzz/pre-listening/blob/main/docs/AGENT-TRACE.md">查看决策依据</a> · <a href="./assets/product-demo.mp4" download>下载视频</a></p>
+<details><summary>阅读文字版演示</summary><ol>
+<li><strong>问题：</strong>PPT 做好了，试讲却总超时。不知道改哪里，也不知道下一遍怎么练。</li>
+<li><strong>演练：</strong>导入 PPT / PDF 与已有讲稿，设定听众与时长；演讲者视图提供提示，并记录网页翻页与实际停留时间。</li>
+<li><strong>复盘：</strong>转写按页整理，可直接改正错字。结合核对后的发言与用时，找到重复、冗长的具体段落。</li>
+<li><strong>改稿：</strong>同屏对照 PPT、原话与建议稿。编辑后采用，修改进入对应页练习稿，原始内容保留。</li>
+<li><strong>追问：</strong>围绕这场汇报准备听众问题，点评对照回答原句与每题评价要点，帮助准备下一次回答。</li>
+<li><strong>Agent 与 Harness：</strong>根据目标、实际用时与保留要求选择下一步；代码约束动作与证据。在视频展示的真实模型记录中，模型提出 complete，Harness 核对原话后仍要求用户确认重点。</li>
+</ol></details>
+</main><script>
+const video=document.querySelector('#demo'),cover=document.querySelector('#play'),error=document.querySelector('#error');
+async function play(){try{error.hidden=true;await video.play();cover.hidden=true}catch{cover.hidden=false;error.hidden=false}}
+cover.addEventListener('click',play);video.addEventListener('play',()=>cover.hidden=true);video.addEventListener('error',()=>{error.hidden=false;cover.hidden=true});
+for(const button of document.querySelectorAll('[data-seek]'))button.addEventListener('click',()=>{video.currentTime=Number(button.dataset.seek);video.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'center'});play()});
+</script></body></html>

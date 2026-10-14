@@ -1,5 +1,5 @@
 import {build} from 'esbuild';
-import {readFile,mkdir,writeFile,rm} from 'node:fs/promises';
+import {readFile,mkdir,writeFile,rm,copyFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
 import {gzipSync} from 'node:zlib';
@@ -30,4 +30,9 @@ html=html.replace('<html lang="zh-CN">','<html lang="zh-CN" data-mode="showcase"
 if(!html.includes('data-mode="showcase"'))throw Error('Missing showcase mode');
 await writeFile(path.join(out,'index.html'),html);
 await writeFile(path.join(out,'.nojekyll'),'');
-console.log(`Built static experience: ${result.outputFiles.length+1} files, ${Math.round((result.outputFiles.reduce((n,f)=>n+gzipSync(f.contents).length,0)+gzipSync(html).length)/1024)} KiB gzipped total. No model credentials or backend required.`);
+// Only public, reviewed demo assets are copied; no source recordings or private trial data.
+await mkdir(path.join(out,'assets'),{recursive:true});
+await copyFile(path.join(root,'public/video.html'),path.join(out,'video.html'));
+for(const name of ['product-demo.mp4','video-poster.jpg','product-demo.zh.vtt'])
+  await copyFile(path.join(root,'docs/assets',name),path.join(out,'assets',name));
+console.log(`Built static experience core: ${result.outputFiles.length+1} files, ${Math.round((result.outputFiles.reduce((n,f)=>n+gzipSync(f.contents).length,0)+gzipSync(html).length)/1024)} KiB gzipped total. Plus public video page and 3 media assets. No model credentials or backend required.`);
