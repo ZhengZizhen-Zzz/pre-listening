@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Pre聆听大师 · 汇报演练</title><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/review.css"><link rel="stylesheet" href="/focus.css"></head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="Pre聆听大师首页"><span class="brand-icon"><svg viewBox="0 0 96 96" fill="none" aria-hidden="true"><rect x="18" y="19" width="60" height="47" rx="5" fill="none" stroke="#fff" stroke-width="5"/><path d="M30 34h28M30 45h19" stroke="#fff" stroke-width="5" stroke-linecap="round"/><rect x="61" y="47" width="12" height="20" rx="6" fill="#b8c3f4" stroke="#30323a" stroke-width="3"/><path d="M57 62v3c0 8 5 13 10 13s10-5 10-13v-3M67 78v7M59 85h16" stroke="#b8c3f4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="brand-name"><span class="brand-prefix">Pre</span>聆听大师</span><span class="beta-label">BETA</span></a>
+    <div class="nav-label">我的演练</div>
+    <nav aria-label="主要导航">
+      <button class="nav-item active" data-view="practice" aria-current="page"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21l4-4 4 4M8 8h8M8 12h5"/></svg><span class="nav-text">演练空间</span></button>
+      <button class="nav-item" data-view="review"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3h8l4 4v14H4V3h4M14 3v5h6M8 12h8M8 16h5"/></svg><span class="nav-text">演练复盘</span><span id="review-dot" class="dot" hidden></span></button>
+      <button class="nav-item" data-view="scripts"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l4 4M4 20l4-1 12-12a2.8 2.8 0 0 0-4-4L4 15v5Z"/></svg><span class="nav-text">下次讲稿</span></button>
+    </nav>
+    <div class="sidebar-divider"></div>
+    <button id="submit-feedback-nav" class="nav-item" type="button" aria-label="反馈使用感受"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9H13a8.5 8.5 0 0 1 8 8v.5Z"/><path d="M8 11h8M8 14h5"/></svg><span class="nav-text">反馈使用感受</span></button>
+    <a id="feedback-inbox-link" class="feedback-inbox-link" href="/feedback-admin.html" target="_blank" hidden>试用反馈 · 仅本机</a>
+    <button id="history-button" class="nav-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10a9 9 0 1 1 1 7M3 4v6h6M12 7v5l3 2"/></svg><span class="nav-text">历史记录</span></button>
+    <div class="sidebar-bottom"><button id="demo-button" class="nav-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 11 7-11 7V5Z"/></svg><span class="nav-text">查看示例</span></button><a class="nav-item guide-link" href="/guide.html" target="_blank"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 4 2c-1 .6-1.5 1-1.5 2M12 16h.01"/></svg><span class="nav-text">使用帮助</span></a></div>
+  </aside>
+  <div class="main-shell">
+    <header class="topbar"><div class="breadcrumb"><span>个人工作区</span><span class="slash">/</span><strong id="breadcrumb">演练空间</strong></div><div class="topbar-actions"><span id="save-status" role="status">导入后自动保存</span><button id="connection" class="connection" title="查看服务状态"><i></i><span>检查连接中</span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="3" fill="currentColor"/><circle cx="15" cy="17" r="3" fill="currentColor"/></svg></button></div></header>
+    <main>
+      <section class="page-heading"><div><h1 id="page-title">演练空间</h1><p id="page-subtitle">用你的 PPT 试讲一次，看看哪里讲不清、哪里可以缩短。</p></div></section>
+      <div id="status" class="status" role="status" aria-live="polite" hidden></div>
+      <div id="demo-banner" class="demo-banner" hidden><span>示例</span>虚构案例 · 可体验复盘与改稿<button id="demo-review" type="button">查看复盘</button><button id="exit-demo">使用自己的材料 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></div>
+      <section id="practice-view">
+        <div class="workspace-grid">
+          <div class="deck-column">
+            <div class="section-top"><h2><span class="step-index">1</span>汇报材料</h2><div class="material-actions"><button id="cancel-material" class="text-button" type="button" hidden>取消加载</button><button id="retry-material" class="text-button" type="button" hidden>继续加载</button><button id="clear-workspace" class="text-button" type="button" title="清空当前工作区，已有内容保留在历史记录中" disabled>清空页面</button><button id="import-material" class="text-button" type="button"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3m-4 4 4-4 4 4M4 15v5h16v-5"/></svg><span>导入 / 更换</span></button></div><input id="pdf-input" type="file" accept=".pdf,.pptx,.ppt,application/pdf,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation" hidden></div>
+            <div class="deck-card">
+              <div class="deck-toolbar"><div><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H5v18h14V8l-5-5v5h5M8 12h8M8 16h6"/></svg><span id="deck-name">尚未导入材料</span></div><div class="deck-view-tools"><span id="page-count" class="chip">PPT / PDF</span><button id="expand-preview" class="button secondary" type="button" hidden>演讲者视图</button></div></div>
+              <div id="slide-area" class="slide-area"><button id="upload-prompt" class="upload-prompt"><span class="file-symbol"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21l4-4 4 4M8 8h8M8 12h5"/></svg></span><strong>先放入你的汇报材料</strong><span>PPT、PPTX 或 PDF</span><span class="upload-action">选择文件 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span><small>单次演练最多 60 页 · 文件上限 500 MB</small></button><canvas id="pdf-canvas" hidden aria-label="当前幻灯片"></canvas>
+              <div id="preview-pending" role="status" hidden>这一页还在加载，可以先查看前两页。</div><div id="preview-error" class="preview-error" role="status" hidden>
+                <h3 id="preview-error-title">本页预览未能显示</h3>
+                <p id="preview-error-detail"></p>
+                <button id="retry-preview" type="button" class="button secondary">重试显示本页</button>
+                <small id="preview-error-reference" hidden></small>
+              </div><div id="sample-slide" hidden></div><div id="text-slide" hidden></div></div>
+              <div id="preview-resizer" class="preview-resizer" role="separator" tabindex="0" aria-label="拖动调整幻灯片大小" aria-orientation="horizontal" aria-controls="slide-area" title="向下拖动放大；也可使用上下方向键" hidden><span></span></div><div class="slide-footer"><div class="preview-actions"><button id="fit-preview" class="text-button" type="button" hidden>适应宽度</button></div><div class="page-controls"><button id="prev-page" aria-label="上一页" disabled><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><span id="page-position">— / —</span><button id="next-page" aria-label="下一页" disabled><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></div></div>
+            </div>
+            <div id="page-navigation" class="page-navigation" hidden><nav id="thumbs" class="thumb-strip" aria-label="幻灯片页码"></nav><label class="page-jump">跳至<input id="jump-page" type="number" min="1" step="1" inputmode="numeric" aria-label="跳转页码">页</label></div>
+          </div>
+          <section id="goal-section" class="goal-column" hidden>
+            <div class="section-top"><h2><span class="step-index">2</span>本次演练</h2></div>
+            <div class="goal-card"><div class="goal-essentials"><div class="goal-field"><label for="audience">讲给谁听</label><select id="audience"><option>老师和同学</option><option>导师和评审老师</option><option>面试官</option><option>领导和同事</option><option>客户和合作伙伴</option><option value="__custom__">其他对象</option></select><input id="audience-custom" maxlength="200" placeholder="填写汇报对象" aria-label="自定义汇报对象" hidden></div><div class="goal-field"><label for="target-minutes">时长</label><div class="duration-field"><input id="target-minutes" type="number" min="1" max="10" step="1" value="5" aria-label="目标时长，1至10分钟"><span>分钟</span></div></div></div><details class="goal-focus"><summary>补充汇报重点<span id="goal-focus-state" class="optional-label">选填</span></summary><textarea aria-label="想讲清什么（选填）" id="takeaways" rows="2" maxlength="2000" placeholder="例如：为什么选择这个方案"></textarea><details class="goal-examples"><summary>参考目标</summary><div class="goal-options" role="group" aria-label="常见汇报目标"><button type="button" data-goal="讲清研究问题、方法和主要发现">研究结论</button><button type="button" data-goal="讲清要解决的问题、方案和选择理由">方案介绍</button><button type="button" data-goal="讲清已完成的工作、当前问题和下一步计划">进展同步</button><button type="button" data-goal="讲清我在项目中的职责、关键决策和成果">项目展示</button></div></details></details></div>
+          <details id="reference-script" class="reference-script" hidden><summary>上一轮讲稿</summary><p>作为本轮参考；下方记录这一次实际讲过的内容。</p><div id="reference-content"></div></details>
+            <div class="record-card"><div class="record-info"><span id="record-indicator" class="record-indicator"></span><strong id="record-label">准备开始</strong><span id="timer" class="timer">00:00</span></div><button id="record-button" class="button primary" disabled><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="13" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3M8 22h8"/></svg><span>开始演练</span></button><small id="record-hint" hidden></small></div>
+            <div class="script-import-entry"><button id="import-script" class="text-button" type="button" disabled>已有讲稿？导入或粘贴</button><button id="manual-entry" class="text-button manual-entry" type="button" disabled>手动填写本次发言</button></div>
+            <div id="audio-section" class="audio-section" hidden><div class="audio-heading"><strong>本次录音</strong><a id="download-audio" download="演练录音.webm"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/></svg><span>保存</span></a></div><select id="audio-part-picker" aria-label="选择回听的录音片段" hidden></select><audio id="audio-player" controls></audio><button id="transcribe-button" class="button secondary">转写录音</button><button id="pause-transcription" class="text-button" hidden>稍后获取</button><button id="retry-transcription" class="text-button" hidden>重新提交转写</button><div id="transcription-recovery" class="transcription-recovery" hidden><p id="transcription-status" class="transcription-status" role="status" hidden></p><button id="manual-after-transcription" type="button" class="button secondary" hidden>手动填写发言</button></div><details class="asr-terms-panel"><summary id="asr-terms-summary">辅助识别：人名与术语（选填）</summary><label for="asr-terms">帮助识别专有名词，每行一词；发言请在「本次发言」中填写。</label><textarea id="asr-terms" rows="3" maxlength="2000" aria-label="识别人名与术语" placeholder="例如：人名、专业术语"></textarea></details></div>
+          </section>
+        </div>
+        <section id="transcript-section" class="transcript-section" hidden>
+
+          <div class="section-top"><div><h2><span class="step-index">3</span>本次发言</h2></div><span id="transcript-source" class="muted"></span><button id="add-segment" class="button secondary" disabled><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l4 4M4 20l4-1 12-12a2.8 2.8 0 0 0-4-4L4 15v5Z"/></svg>编辑当前页</button></div>
+          <div class="analyze-footer"><span id="analysis-hint">识别错字可直接改，分析会使用这里的内容。</span><button id="analyze-button" class="button primary" disabled>查看演练反馈 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></div>
+          <section id="practice-timing-details" class="timing-details" hidden><div id="practice-timing" class="timing-panel" hidden></div></section>
+          <div id="practice-comparison" hidden></div>
+          <div id="segments"><div class="empty-transcript">录音转写后，发言会按页显示在这里。也可以直接录入已有发言。</div></div>
+
+        </section>
+      <section id="goal-agent-practice" class="goal-agent" aria-label="限时改进" hidden></section>
+      <details id="coach-panel" class="coach-panel" hidden>
+        <summary><span>想重点改进什么？</span><span class="coach-optional">选填</span></summary>
+        <form id="coach-form">
+          <label for="coach-command" class="coach-input-label">补充你的需求</label>
+          <textarea id="coach-command" maxlength="1000" rows="2" required placeholder="例如：缩短到5分钟，或练习回答听众的追问"></textarea>
+          <div class="coach-form-footer"><div class="coach-examples"><button type="button" data-coach-example="看看我每页用了多长时间">查看逐页用时</button><button type="button" data-coach-example="帮我把整场汇报压缩到5分钟">压到5分钟</button><button type="button" data-coach-example="结合这次汇报内容，模拟听众提3道问题">练习听众提问</button></div><button id="coach-submit" type="submit" class="button primary">生成练习方案</button></div>
+        </form>
+        <div id="coach-output" class="coach-output" aria-live="polite"></div>
+      </details>
+      </section>
+      <section id="scripts-view" hidden><div class="scripts-toolbar"><p id="scripts-summary"></p><div><button id="export-script" class="button secondary" disabled><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/></svg>导出讲稿</button><button id="next-rehearsal" class="button primary" disabled>用这份稿再练 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></div></div><details class="script-help"><summary>如何修改这份讲稿？</summary><p>在复盘里选择建议，生成并核对修改稿，点击「采用这版」。相应段落会更新到这里。</p><button id="scripts-back-review" class="text-button">回到复盘 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></details><div id="script-list"></div></section>
+      <section id="review-view" hidden>
+        <p id="partial-review-warning" class="coverage-note" hidden>这次录音中途停止，以下复盘只依据已保存的片段；没有录到的部分不会被当成漏讲问题。</p>
+        <div id="review-comparison" hidden></div>
+        <section id="analysis-progress" class="analysis-progress" role="status" aria-live="polite" hidden>
+          <h2 id="analysis-title"></h2><p id="analysis-detail"></p><p id="analysis-scope" class="coverage-note" hidden></p><p id="analysis-elapsed" class="muted"></p>
+          <div class="analysis-actions"><button id="retry-analysis" class="button primary" hidden>重试分析</button><button id="analysis-back" class="button secondary">回到发言</button></div>
+        </section>
+        <div id="review-empty" class="review-empty"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3h8l4 4v14H4V3h4M14 3v5h6M8 12h8M8 16h5"/></svg><h2>还没有本次复盘</h2><p>完成录音转写或录入发言后，即可分析。</p><button class="button primary" id="back-to-practice">去演练 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></div>
+        <div id="review-content" hidden>
+          <div class="report-top"><div><p id="report-material" class="report-material"></p></div><div class="report-buttons"><button id="export-report" class="button secondary">导出复盘</button></div></div>
+          <div class="report-context-row"><span id="report-coverage" class="status-pill warning" hidden></span><button id="repair-report-material" class="text-button" hidden>读取文字并更新分析</button></div>
+          <div id="report-outdated" class="report-outdated" hidden><span>分析规则已更新</span><button id="refresh-report" class="text-button">更新分析</button></div>
+          <section class="report-overview"><div id="report-summary"></div><details id="strengths-block" hidden><summary>值得保留的表达</summary><ul id="report-strengths"></ul></details></section>
+          <details id="report-investigation" hidden><summary>本次核对范围</summary><p id="report-investigation-detail" class="muted"></p></details>
+          <div id="metrics" class="metrics"></div>
+        <section id="goal-agent-review" class="goal-agent" aria-label="限时改进" hidden></section>
+
+          <section id="review-timing-details" class="timing-details" hidden><div id="review-timing" class="timing-panel" hidden></div></section>
+          <section id="time-coach" class="time-coach" hidden></section>
+          <div id="issues-section" class="review-grid"><div><h2 class="review-section-title">先改这几处</h2><div id="issues"></div></div></div>
+          <section id="practice-suggestions" class="practice-suggestions" hidden><h2>接下来可以这样练</h2><div id="practice-suggestion-list"></div></section>
+          <section class="review-next"><div class="review-next-copy"><h2>继续练习</h2><div id="report-next-step"></div></div><div class="review-next-actions"><button id="review-script" type="button" class="button primary">查看下次讲稿</button><section id="training-entry" class="training-entry" aria-label="针对性练习"></section><button id="review-back" class="text-button">回看原发言</button></div></section>
+        </div>
+      </section>
+
+    </main>
+  </div>
+  <dialog id="training-dialog" class="training-dialog" aria-labelledby="training-title">
+    <div class="training-chrome"><header class="training-header"><div><p id="training-eyebrow"></p><h2 id="training-title"></h2></div><button id="training-close" type="button" class="text-button" aria-label="保存并关闭练习">关闭 ×</button></header>
+    <div class="training-progress-row"><span id="training-progress" hidden></span><nav id="training-nav" aria-label="练习题目"></nav></div></div>
+    <div class="training-question-block"><p id="training-focus" class="training-focus"></p><h3 id="training-question" class="training-question"></h3></div>
+    <div class="training-layout"><aside id="training-context"></aside><section class="training-main">
+      <details id="training-rubric" class="training-rubric" hidden><summary>回答要点</summary><div id="training-rubric-content"></div></details>
+      <div id="training-setup" class="training-setup"><label for="training-count">题数</label><select id="training-count" aria-label="本组题数"></select><button id="training-generate" class="button primary" type="button">生成问题</button></div>
+      <button id="training-resume" class="text-button" type="button" hidden>继续获取问题</button>
+      <div id="training-attempt" hidden>
+        <div class="training-answer-heading"><label for="training-answer" id="training-answer-label"></label><div id="training-attempts"></div></div>
+        <textarea id="training-answer" rows="3" maxlength="6000"></textarea>
+        <div class="training-record-controls"><button id="training-record" class="button secondary" type="button">录音回答</button><span id="training-timer" aria-live="off"></span><button id="training-transcribe" class="text-button" type="button" hidden>转写录音</button><a id="training-audio-download" class="text-button" hidden>下载录音</a></div>
+        <select id="training-part-picker" aria-label="选择回听的回答片段" hidden></select><audio id="training-audio" controls hidden></audio><p id="training-compare" class="training-compare" hidden></p>
+        <button id="training-feedback-button" class="button primary" type="button">查看回答点评</button>
+        <div id="training-feedback" aria-live="polite"></div>
+        <div id="training-revision" class="training-revision" hidden></div>
+        <div class="training-follow-actions"><button id="training-retry" class="button secondary" type="button" hidden>再练一次</button><button id="training-followup" class="button secondary" type="button" hidden>接着追问</button><button id="training-next" class="button primary" type="button" hidden>下一题 →</button></div>
+        <p id="training-finished" class="training-finished" hidden>本组已完成，可以回看反馈或再练一次。</p>
+      </div>
+      <p id="training-status" class="training-status" role="status" aria-live="polite"></p><button id="training-pause" class="text-button" type="button" hidden>稍后获取转写</button>
+    </section></div>
+    <footer class="training-footer"><details><summary>练习说明</summary><p>录音每次最多5分钟。生成问题与反馈使用文字模型，转写使用语音服务；点击相应按钮时才提交。反馈可核对原文，但不代表事实已获验证。此处记录独立于整场演练，可单独导出；当前整场恢复文件不包含这些练习。</p></details><button id="training-export" type="button" class="text-button">导出记录</button></footer>
+  </dialog>
+  <dialog id="slide-preview-dialog" class="slide-preview-dialog" aria-labelledby="slide-preview-title">
+    <header class="slide-reader-header"><h2 id="slide-preview-title">大屏查看</h2><div class="slide-zoom-tools" role="group" aria-label="页面缩放">
+      <button id="slide-zoom-out" type="button" aria-label="缩小页面" title="缩小（−）">−</button>
+      <input id="slide-zoom-range" type="range" min="100" max="300" step="25" value="100" aria-label="页面放大比例">
+      <output id="slide-zoom-value" for="slide-zoom-range">100%</output>
+      <button id="slide-zoom-in" type="button" aria-label="放大页面" title="放大（+）">＋</button>
+      <button id="slide-zoom-fit" type="button" title="恢复整页（0）">整页</button>
+    </div><button id="close-slide-preview" type="button" aria-label="关闭页面预览" title="关闭（Esc）">×</button></header>
+    <div id="slide-preview-viewport" class="slide-reader-viewport" tabindex="0" aria-label="幻灯片大图，放大后可拖动或滚动查看">
+      <div id="slide-preview-sheet" class="slide-reader-sheet"><img id="slide-preview-large" alt="PPT 页面预览" draggable="false" hidden></div>
+      <div id="slide-preview-message" class="slide-reader-message" role="status" hidden><p id="slide-preview-message-text"></p><button id="slide-preview-retry" type="button" class="button secondary" hidden>重试显示本页</button></div>
+    </div>
+    <footer class="slide-reader-footer"><span id="slide-preview-recording" hidden>正在录音 · 翻页已同步</span><nav id="slide-preview-nav" class="slide-preview-nav" aria-label="放大预览翻页" hidden><button id="slide-preview-prev" type="button" class="button secondary" aria-label="放大预览上一页">← 上一页</button><span id="slide-preview-position"></span><button id="slide-preview-next" type="button" class="button secondary" aria-label="放大预览下一页">下一页 →</button></nav><span class="slide-reader-hint">放大后拖动查看</span></footer>
+  </dialog>
+  <dialog id="history-dialog" class="history-dialog"><button id="close-history" class="dialog-close" aria-label="关闭历史记录">×</button><h2>历史记录</h2><p>选择一条记录，继续演练或查看复盘。</p><details class="backup-tools"><summary>备份与恢复</summary><p>换浏览器或清理数据前，可保存文字恢复文件。包括材料文字、发言、复盘和改稿，不包含原始 PPT、PDF 或录音附件。</p><div><button id="backup-button" class="button secondary">导出恢复文件</button><button id="import-backup" class="button secondary">导入恢复文件</button><input id="backup-input" type="file" accept="application/json,.json" hidden></div><p>JSON 文件供本工具恢复使用。阅读或分享请导出复盘、讲稿。</p></details><div id="history-list"></div></dialog>
+  <dialog id="connection-dialog"><button class="dialog-close" id="close-dialog" aria-label="关闭">×</button><h2>服务状态</h2><p id="connection-details">正在检查连接。</p><p>文字分析使用 DeepSeek，录音转写使用百炼。在点击相应按钮时提交所需内容；试用反馈由你确认后保存给开发者。</p></dialog>
+  <dialog id="action-dialog" aria-labelledby="action-title"><h2 id="action-title">确认操作</h2><p id="action-question"></p><form method="dialog" class="confirmation-buttons"><button class="button secondary" value="cancel" autofocus>取消</button><button class="button primary" value="continue">继续</button></form></dialog>
+  <dialog id="feedback-dialog" class="feedback-dialog" aria-labelledby="feedback-title">
+    <button id="feedback-close" class="dialog-close" type="button" aria-label="关闭反馈弹窗">×</button>
+    <h2 id="feedback-title">这次练习帮到你了吗？</h2><p>把有用的建议和遇到的问题告诉开发者。</p>
+    <form id="feedback-form">
+      <label class="feedback-helpful-field">整体帮助（选填）<select id="feedback-helpful"><option value="">请选择</option><option value="yes">有帮助</option><option value="partly">部分有帮助</option><option value="no">没什么帮助</option><option value="unsure">还不确定</option></select></label>
+      <label>最有用的地方，或哪里需要改进？<textarea id="feedback-comment" rows="3" maxlength="4000" placeholder="例如：建议很具体，但有一句话识别错了。"></textarea></label>
+      <details id="feedback-issue-details"><summary>逐条评价建议（选填）</summary><div id="feedback-issue-fields"></div></details>
+      <p id="feedback-status" role="status" aria-live="polite"></p><div class="feedback-actions"><p class="feedback-thanks">非常感谢你的反馈，帮助我们把产品做得更好。</p><button id="feedback-send" class="button primary" type="submit">提交 / 更新反馈</button></div>
+    </form>
+  </dialog>
+  <script type="module" src="/app.mjs"></script>
+</body></html>

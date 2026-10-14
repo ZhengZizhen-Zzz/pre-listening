@@ -1,0 +1,28 @@
+# Credentials and local runtime data
+.env
+.env.*
+!.env.example
+.local/
+data/
+*.log
+.DS_Store
+node_modules/
+public/assets/
+.venv/
+__pycache__/
+# Private recordings, decks and verification runs
+verification/
+private/
+work/
+*.webm
+*.m4a
+*.wav
+*.mp3
+*.ppt
+*.pptx
+*.pdf
+*.docx
+# Live evaluation output is private by default
+evals/quality/*
+!evals/quality/cases.json
+public/vendor/

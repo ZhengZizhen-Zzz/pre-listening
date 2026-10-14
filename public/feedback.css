@@ -1,0 +1,12 @@
+.feedback-dialog{width:min(640px,calc(100vw - 32px));max-height:88vh;padding:30px;border:1px solid #d8e1e6;border-radius:18px;color:#253845;background:#fff}.feedback-dialog::backdrop{background:#15273799}.feedback-dialog h2{margin:0 0 8px;font-size:24px}.feedback-dialog p{line-height:1.65}.feedback-dialog form{display:grid;gap:18px}.feedback-dialog label{display:grid;gap:7px;font-size:14px;color:#44535e}.feedback-dialog input:not([type=checkbox]),.feedback-dialog select,.feedback-dialog textarea{width:100%;box-sizing:border-box;font:inherit;border:1px solid #ccd7de;border-radius:8px;padding:10px;background:#fff;color:#263e4d}.feedback-dialog textarea{resize:vertical}.feedback-field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}.feedback-dialog .feedback-check{display:flex;align-items:flex-start;gap:10px;line-height:1.6}.feedback-check input{margin-top:5px;accent-color:#315f66}.feedback-scope{padding:16px;background:#eef5f6;border-radius:10px}.feedback-scope p{font-size:13px;color:#526571;margin:10px 0 0}.feedback-issue{padding:16px 0;border-bottom:1px solid #e5ebee;display:grid;gap:12px}.feedback-issue strong{font-size:14px}.feedback-dialog summary{cursor:pointer;font-size:14px;color:#315f66}.feedback-dialog .feedback-actions{display:flex;justify-content:flex-end;gap:12px}.feedback-dialog [hidden]{display:none!important}#feedback-status{margin:0;font-size:14px;color:#24564b}#feedback-status.error{color:#a33a2b}.report-buttons{display:flex;flex-wrap:wrap;gap:10px}.feedback-inbox-link{font-size:13px;color:#507a81;margin:10px 22px;display:block}@media(max-width:600px){.feedback-dialog{padding:22px}.feedback-field-row{grid-template-columns:1fr}.report-buttons{margin-top:12px}}
+
+.feedback-helpful-field{max-width:50%}
+.feedback-dialog .feedback-actions{align-items:center;gap:20px}
+.feedback-dialog .feedback-thanks{flex:1;min-width:0;margin:0;text-align:left;font-size:13px;color:#66747e}
+.feedback-actions #feedback-send{flex-shrink:0}
+@media(max-width:600px){.feedback-dialog .feedback-actions{gap:12px}.feedback-dialog .feedback-thanks{font-size:12px}}
+.feedback-dialog h2{padding-right:44px}
+.feedback-dialog .dialog-close{right:18px;top:16px;width:36px;height:36px;padding:0;border-radius:8px;font-size:26px;line-height:1;color:#617083;cursor:pointer}
+.feedback-dialog .dialog-close:hover,.feedback-dialog .dialog-close:focus-visible{background:#edf3f6;color:#253845}
+.feedback-dialog .dialog-close:focus-visible{outline:2px solid #37758a;outline-offset:2px}
+.feedback-dialog .dialog-close:disabled{cursor:not-allowed;opacity:.45}

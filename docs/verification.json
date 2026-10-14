@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-14",
+  "scope": "Sanitized public release; synthetic fixtures, no paid model calls in this release check",
+  "automatedTests": {
+    "tests": 302,
+    "passed": 302,
+    "failed": 0
+  },
+  "evaluationInputs": {
+    "syntheticCases": 29,
+    "validation": "structure only"
+  },
+  "browserDemo": [
+    "practice with synthetic slides",
+    "review with timing and original quotes",
+    "three preset audience questions"
+  ],
+  "notMeasured": [
+    "production reliability",
+    "user improvement rate",
+    "adoption rate"
+  ]
+}

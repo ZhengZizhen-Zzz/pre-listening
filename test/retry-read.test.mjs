@@ -1,0 +1,6 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {retryRead} from '../public/retry-read.mjs';
+import {automaticCoach} from '../public/automatic-coach.mjs';
+test('短暂断网读取同一任务，最多三次，恢复后返回已有结果',async()=>{let count=0;const waits=[];assert.equal(await retryRead(async()=>{if(++count<3)throw Object.assign(new Error('network'),{status:502});return 'same task';},{pause:async ms=>waits.push(ms)}),'same task');assert.deepEqual(waits,[500,1000]);});
+test('权限、额度和过期错误不重试；持续断网有限停止',async()=>{for(const status of [401,403,404,410,429,502]){let count=0;await assert.rejects(retryRead(async()=>{count++;throw Object.assign(new Error('failure'),{status,retryable:true});},{pause:async()=>{}}));assert.equal(count,status===502?3:1);}});
+test('复盘读取短暂失败继续获取原任务，不重复提交付费请求',async()=>{let posts=0,gets=0;const result=await automaticCoach('diagnose',{}, {sleep:async()=>{},api:async(path,options)=>{if(options.method==='POST'){posts++;return{id:'same',status:'running'};}assert.equal(path,'/api/coach/same');if(++gets===1)throw Object.assign(new Error('offline'),{retryable:true});return{id:'same',status:'complete',results:{diagnose:{summary:'ok'}}};}});assert.equal(posts,1);assert.equal(gets,2);assert.equal(result.summary,'ok');});
