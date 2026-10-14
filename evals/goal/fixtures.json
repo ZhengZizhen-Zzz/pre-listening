@@ -1,0 +1,25 @@
+{
+  "description": "Synthetic presentation state for a live Agent decision trace. Timings and audio identifiers are test inputs, not observed human recordings.",
+  "command": "把汇报控制在5分钟内，保留研究方法与当前进度：计划访谈5名同学，目前尚未开展访谈。",
+  "session": {
+    "pages": [
+      {"number": 1, "text": "研究背景：同学在考试周寻找空余自习座位不方便，拟研究座位信息与实际使用的差异。"},
+      {"number": 2, "text": "研究方法：计划访谈5名同学，了解寻找座位的实际经历。目前尚未开展访谈，不能报告研究结论。"}
+    ],
+    "segments": [
+      {"id": "s1", "page": 1, "text": "我们关心的是考试周寻找自习座位不方便的问题。同学到教室以后可能找不到座位，寻找空位不太方便。我再解释一下背景，就是考试周大家需要座位，可是寻找座位会遇到困难，所以我们关注的是寻找座位不方便。这是这次研究的出发点。"},
+      {"id": "s2", "page": 2, "text": "我们计划访谈5名同学，了解他们寻找自习座位的实际经历。目前尚未开展访谈，所以这里介绍的是研究计划，还不能给出研究结论。"}
+    ],
+    "events": [{"page": 1, "at": 0}, {"page": 2, "at": 240}],
+    "durationSeconds": 420,
+    "targetSeconds": 300,
+    "audience": "老师和同学",
+    "takeaways": "为什么研究这个问题，以及准备如何研究",
+    "transcriptSource": "manual"
+  },
+  "after": {
+    "firstSpeech": "我们关注考试周寻找自习座位不方便的问题，准备了解座位信息与实际使用的差异。",
+    "durationSeconds": 280,
+    "events": [{"page": 1, "at": 0}, {"page": 2, "at": 150}]
+  }
+}

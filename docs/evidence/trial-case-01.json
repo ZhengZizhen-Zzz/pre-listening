@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "caseId": "trial-case-01",
+  "sourceType": "deidentified_summary_of_user_submitted_feedback",
+  "submittedDate": "2026-10-10",
+  "transformation": "Manual thematic paraphrase plus whitelisted state fields; no original speech, identity, deck, audio or feedback record identifier.",
+  "context": {
+    "pages": 13,
+    "speechSegments": 25,
+    "reportSource": "live"
+  },
+  "feedback": {
+    "overallHelpful": "yes",
+    "themes": [
+      "用户认为工具找到了故事讲述中对象不明确的问题，并主观认为对下一次演讲有帮助。",
+      "用户指出 PPT 预览较小，难以看清具体文字。"
+    ]
+  },
+  "suggestions": [
+    {
+      "topic": "个人经历的转折关系不清楚",
+      "judgment": "correct",
+      "adoptionIntent": "yes",
+      "rewriteStatus": "draft",
+      "acceptedAtPresent": false
+    },
+    {
+      "topic": "故事开头缺少明确的经历主体",
+      "judgment": "correct",
+      "adoptionIntent": "yes",
+      "rewriteStatus": "draft",
+      "acceptedAtPresent": false
+    }
+  ],
+  "savedPracticeScriptCount": 0,
+  "independentFollowupObserved": false,
+  "interpretation": "Two suggestions were marked correct and willing-to-adopt in this single submission. Drafts were present, but no acceptedAt or saved practice script was present. No observed performance improvement is claimed."
+}

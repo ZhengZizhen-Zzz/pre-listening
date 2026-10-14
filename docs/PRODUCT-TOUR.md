@@ -66,7 +66,7 @@
 
 ![Agent 采用后进入重练](assets/goal-next.jpg)
 
-本组 Agent 图片由项目的 `createGoalAgent` 实际组件生成，使用合成演练数据与已有建议；演示夹具不调用模型、不保存用户数据。它展示的是缓存建议路径和采用后的状态迁移。模型规划、MCP 工具调用及独立录音验证的实现与验证范围，见[架构说明](ARCHITECTURE.md)和[验证说明](VALIDATION.md)。
+本组 Agent 图片由项目的 `createGoalAgent` 实际组件生成，使用合成演练数据与已有建议；演示夹具不调用模型、不保存用户数据。它展示的是缓存建议路径和采用后的状态迁移。实际模型怎样选择动作、哪些结果被拦截，见[Agent 决策实录](AGENT-TRACE.md)；实现与验证范围见[架构说明](ARCHITECTURE.md)和[验证说明](VALIDATION.md)。
 
 ## 每个界面背后的设计取舍
 

@@ -1,6 +1,6 @@
 {
   "date": "2026-10-14",
-  "scope": "Sanitized public release; synthetic fixtures, no paid model calls in this release check",
+  "scope": "Original sanitized-release baseline; additional evidence capture is recorded separately below.",
   "automatedTests": {
     "tests": 302,
     "passed": 302,
@@ -19,5 +19,22 @@
     "production reliability",
     "user improvement rate",
     "adoption rate"
-  ]
+  ],
+  "evidenceUpdate": {
+    "date": "2026-10-14",
+    "targetedAgentTests": {
+      "passed": 26,
+      "failed": 0
+    },
+    "liveCapture": {
+      "file": "evidence/goal-agent-live.json",
+      "syntheticStates": 4,
+      "networkModelRequests": 7,
+      "completedRuns": 2,
+      "failedRuns": 2
+    },
+    "userCase": "evidence/trial-case-01.json",
+    "sourceHashesChecked": true,
+    "releaseFilesScanned": 187
+  }
 }
