@@ -1,0 +1,6 @@
+
+import {demo} from '../../public/demo.mjs';import {renderDemoSlide} from '../../public/demo-slides.mjs';import {createGoalAgent} from '../../public/goal-agent.mjs';
+const data=structuredClone(demo),session={...data,targetSeconds:360};
+const state={id:'gallery-synthetic',roundId:'gallery-round',audioAssetId:'synthetic-audio',recordingStatus:'complete',jobStatus:'complete',demo:false,pages:data.pages,segments:data.segments,report:data.report,scripts:{},feedback:{},rewrites:{0:{result:data.report.issues[0].draft}},health:{},goalAgent:null};
+const $=id=>document.getElementById(id);const esc=s=>String(s??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+const controller=createGoalAgent({state,$,escape:esc,getSession:()=>session,workspace:{saveNow:async()=>true,saveSoon(){},nextRehearsal(){ $('status').textContent='下一轮将使用已更新的讲稿，并通过新的录音验证实际用时。';}},api:async()=>{throw Error('此演示不调用模型；真实流程请运行主应用。')},health:async()=>{},message:t=>$('status').textContent=t,view:()=>{},slidePreview:n=>`<div class="demo-evidence"><div class="demo-material-label">第 ${n} 页材料</div><div class="demo-mini-slide">${renderDemoSlide(data.pages[n-1])}</div></div>`,slidePreviews:{render(){}}});controller.render();

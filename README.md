@@ -6,7 +6,7 @@
 
 PPT 上的内容 · 真正讲出的话 · 每一页的时间
 
-[产品设计](docs/PRODUCT.md) · [反馈与迭代](docs/ITERATIONS.md) · [Agent 与 Harness](docs/ARCHITECTURE.md) · [运行与验证](docs/SETUP.md)
+[产品全景](docs/PRODUCT-TOUR.md) · [产品设计](docs/PRODUCT.md) · [反馈与迭代](docs/ITERATIONS.md) · [Agent 与 Harness](docs/ARCHITECTURE.md) · [运行与验证](docs/SETUP.md)
 
 </div>
 
@@ -16,9 +16,11 @@ PPT 上的内容 · 真正讲出的话 · 每一页的时间
 
 **Pre聆听大师把“再练一遍”变成一个有依据、有取舍、有验证的过程。** 导入材料，按正式节奏讲一次，找到值得改的一段；保留你的事实和表达习惯，整理成可继续练习的讲稿，再用下一轮演练检验调整。
 
-<img src="docs/assets/review.jpg" alt="演练复盘：逐页用时、发言依据和改进建议" width="100%">
+<a href="docs/PRODUCT-TOUR.md"><img src="docs/assets/product-tour.jpg" alt="产品全景：演讲者视图、逐页发言、用时复盘、原话改稿、听众追问和目标驱动 Agent" width="100%"></a>
 
-<sub>界面来自可运行版本。图中的校园预约案例及反馈为预设的虚构演示，不代表真实用户数据或模型效果。</sub>
+<sub>真实界面与组件截图；案例和反馈为虚构演示，不代表真实用户数据或模型效果。</sub>
+
+**[逐步看完整体验：10 张界面图，从导入材料到下一轮验证 →](docs/PRODUCT-TOUR.md)**
 
 ## 一次演练之后，接下来做什么？
 
@@ -45,7 +47,9 @@ flowchart LR
 - **实际发言**提供证据：记录翻页与用时；转写可核对、可编辑；录音中断后可继续汇报。缺失翻页记录的内容保持“待确认”，不擅自归到第一页。
 - **练习稿**承接修改：建议经用户采用后更新；原稿、原始发言分别保留。演讲者视图展示材料与讲稿，服务下一次真实演练。
 
-<img src="docs/assets/practice.jpg" alt="演练空间：PPT 材料预览、目标设置和录音入口" width="100%">
+<img src="docs/assets/rewrite.jpg" alt="建议不止停留在报告里：对照 PPT 和原话修改，再采用到下次讲稿" width="100%">
+
+[看逐页发言](docs/PRODUCT-TOUR.md#03-把每一页真正讲过的话留下来) · [看采用后的讲稿](docs/PRODUCT-TOUR.md#06-采用以后修改有去处) · [看演讲者视图](docs/PRODUCT-TOUR.md#02-对着材料按正式节奏讲一遍)
 
 ### 问答练习延续这一场汇报
 
@@ -61,6 +65,10 @@ flowchart LR
 2. 在诊断、压缩、澄清、重新演练、目标确认之间选择下一步。
 3. 用户选择“这段需要保留”后，记录取舍约束，换一处建议或重新判断。
 4. 采用改稿后进入下一轮试讲，以新录音验证实际用时；是否保留重点由用户确认。
+
+<img src="docs/assets/goal-agent.jpg" alt="目标 Agent 的实际组件：选择压缩候选、核对事实、编辑采用或要求保留" width="100%">
+
+<sub>实际组件的合成交互演示，展示复用已有建议的路径，本图未调用模型。[查看采用之后怎样进入下一轮 →](docs/PRODUCT-TOUR.md#09-围绕一个目标决定下一步怎么练)</sub>
 
 已有可用建议直接复用，无需让模型重复规划。工具通过本地 MCP 提供指定页上下文和计时摘要；模型不能执行任意命令，也不能自动改写外部文件。
 
