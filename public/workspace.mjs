@@ -376,7 +376,7 @@ export function createWorkspace({ state, $, escape, paragraphs, message, setBusy
     } catch (error) { message(`导入失败：${error.message}`, true); }
     finally { $('backup-input').value = ''; }
   }
-  async function boot() {
+  async function boot({restore:shouldRestore=true} = {}) {
     $('history-button').addEventListener('click', showHistory);
     $('close-history').addEventListener('click', () => $('history-dialog').close());
     $('backup-button').addEventListener('click', exportRecord);
@@ -385,7 +385,7 @@ export function createWorkspace({ state, $, escape, paragraphs, message, setBusy
     $('export-script').addEventListener('click', () => download(compiledScript().map(s => `${pageLabel(s.page)}\n${s.text}`).join('\n\n'), '下次汇报讲稿.txt', 'text/plain;charset=utf-8'));
     $('next-rehearsal').addEventListener('click', nextRehearsal);
     setBusy(true); await health();
-    try { const id = await localRecords.lastId(); if (id) { const record = await localRecords.get(id); if (record) await restore(record); } }
+    try { const id = shouldRestore ? await localRecords.lastId() : null; if (id) { const record = await localRecords.get(id); if (record) await restore(record); } }
     catch { saveLabel('本机自动保存不可用', true); }
     finally { setBusy(false); }
   }

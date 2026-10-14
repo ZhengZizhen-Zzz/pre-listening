@@ -26,3 +26,6 @@ work/
 evals/quality/*
 !evals/quality/cases.json
 public/vendor/
+
+# Generated static experience
+showcase-dist/

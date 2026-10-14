@@ -12,7 +12,8 @@
     "test": "node --test test/*.test.mjs",
     "eval:validate": "node scripts/run-quality.mjs",
     "test:release": "node scripts/check-release.mjs",
-    "postinstall": "node scripts/prepare-vendor.mjs"
+    "postinstall": "node scripts/prepare-vendor.mjs",
+    "build:showcase": "node scripts/build-showcase.mjs"
   },
   "dependencies": {
     "esbuild": "0.28.2",

@@ -1,3 +1,5 @@
+import {isShowcase} from './experience-mode.mjs';
+import {mountShowcase} from './showcase.mjs';
 import {autoGrowTextarea} from './auto-grow.mjs';
 import {createGoalAgent} from './goal-agent.mjs';
 import {createScriptImport} from './script-import.mjs';
@@ -162,6 +164,7 @@ function updateControls() {
 }
 
 async function api(route, options = {}) {
+  if (isShowcase) throw new Error('在线示例使用预设内容，真实分析请运行完整版。');
   let response;
   try { response = await fetch(route, { ...options, headers: { ...options.headers, 'X-Local-Token': state.health?.csrf || '' } }); }
   catch(e){if(['TimeoutError','AbortError'].includes(e.name))throw e;throw Object.assign(new Error('连接暂时中断，内容已保留，请稍后重试。'),{retryable:true});}
@@ -169,6 +172,7 @@ async function api(route, options = {}) {
 }
 
 async function health() {
+  if (isShowcase) { state.health = {textConfigured:false,asrConfigured:false,trialMode:true}; updateControls(); return; }
   try {
     const response = await fetch('/api/health', {signal: AbortSignal.timeout(10000)});
     if (!response.ok) throw new Error('本地服务不可用');
@@ -1045,7 +1049,7 @@ $('manual-after-transcription').addEventListener('click', openManualTranscript);
 $('analyze-button').addEventListener('click', analyze);
 $('retry-analysis').addEventListener('click', analyze);
 $('analysis-back').addEventListener('click', () => view('practice'));
-$('demo-button').addEventListener('click', loadDemo);
+$('demo-button').addEventListener('click', async()=>{await loadDemo();if(isShowcase)view('review');});
 $('demo-review').addEventListener('click',()=>{if(state.demo){if(!state.report)workspace.replaceReport(structuredClone(demo.report));view('review');}});
 $('exit-demo').addEventListener('click', async () => {
   await workspace.saveNow(); resetSession(); workspace.newRecord(); state.demo = false; state.pages = []; state.current = 1;
@@ -1094,4 +1098,13 @@ $('audio-part-picker').onchange=async()=>{
 };
 $('expand-preview').textContent='演讲者视图';
 $('expand-preview').addEventListener('click',()=>presenter.open());
-workspace.boot().then(()=>setTimeout(()=>{if(!state.recording)void loadPdfLibrary().catch(()=>{});},1200));
+if (isShowcase) {
+  workspace.boot({restore:false}).then(async()=>{
+    await loadDemo();
+    mountShowcase({view,loadDemo});
+    view('review');
+    document.documentElement.dataset.ready='true';
+  }).catch(()=>message('示例未能打开，请刷新重试。',true));
+} else {
+  workspace.boot().then(()=>setTimeout(()=>{if(!state.recording)void loadPdfLibrary().catch(()=>{});},1200));
+}

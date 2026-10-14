@@ -4,7 +4,11 @@
 
 **AI 汇报演练助手 · 把 PPT、真实发言和逐页用时，变成下一遍可用的讲稿与练习。**
 
-[看完整体验](docs/PRODUCT-TOUR.md) · [真实试用案例](docs/USER-CASE.md) · [产品决策与个人贡献](docs/PRODUCT-DECISIONS.md) · [Agent 决策实录](docs/AGENT-TRACE.md)
+**[▶ 立即体验在线示例](https://zhengzizhen-zzz.github.io/pre-listening/)**
+
+免注册 · 免配置 · 材料已备好，直接体验复盘、改稿采用与听众追问
+
+[浏览完整界面](docs/PRODUCT-TOUR.md) · [真实试用案例](docs/USER-CASE.md) · [产品决策与个人贡献](docs/PRODUCT-DECISIONS.md) · [Agent 决策实录](docs/AGENT-TRACE.md)
 
 </div>
 
@@ -86,7 +90,9 @@ Harness 包括原话校验、独立语义复核、事实保持、动作白名单
 
 ## 体验与验证
 
-需要 **Node.js 22+**。不配置模型密钥也能运行「查看示例」，体验预设演练与改稿流程。
+**快速体验：** 打开[在线交互示例](https://zhengzizhen-zzz.github.io/pre-listening/)，从一场超时汇报开始：查看逐页用时 → 编辑并采用建议 → 查看更新后的讲稿 → 体验听众追问与点评。无需上传材料、注册或配置 Key。示例使用预设内容，不消耗模型额度；真实 AI 调用见[模型验证与决策记录](docs/AGENT-TRACE.md)。
+
+**运行完整版：** 需要 **Node.js 22+**。不配置模型密钥也能运行「查看示例」，体验预设演练与改稿流程。
 
 ```bash
 git clone https://github.com/ZhengZizhen-Zzz/pre-listening.git

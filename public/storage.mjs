@@ -1,10 +1,11 @@
+import {isShowcase} from './experience-mode.mjs';
 import {appendRecordingPart} from './recording-parts.mjs';
 let database;
 function openDatabase() {
   if (database) return database;
   database = new Promise((resolve, reject) => {
     let abandoned = false;
-    const request = indexedDB.open('rehearsal-studio', 2);
+    const request = indexedDB.open(isShowcase ? 'pre-public-showcase' : 'rehearsal-studio', 2);
     request.onupgradeneeded = () => {
       const db = request.result;
       if (!db.objectStoreNames.contains('records')) db.createObjectStore('records', { keyPath: 'id' });
